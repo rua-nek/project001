@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
+const fs = require('fs');
 const app = express();
 const port = 3000;
 
@@ -20,7 +21,7 @@ app.set('views', './src/resources/views');
 app.use(morgan('dev'));
 
 // Render template index.handlebars
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
   res.render('home')
 });
 
